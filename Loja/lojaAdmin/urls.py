@@ -18,7 +18,8 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls.static import static
 from django.conf import settings
+from django.conf.urls import include
 
 urlpatterns = [ #patterns são as rotas que podem ser utilizadas após a "porta" do servidor, outras formas que o usuário pode acessar uma página
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls), path('', include('loja.urls.HomeUrls')), path('produto/', include('loja.urls.ProdutoUrls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
