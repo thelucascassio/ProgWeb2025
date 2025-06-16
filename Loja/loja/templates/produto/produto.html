@@ -11,7 +11,7 @@
     {% for prod in produtos %}
         <div class="row">
             <h5 class="col-md-3">{{prod.Produto}}</h5>
-            <a href="{% url 'produto' prod.id %}" class="btn btn-primary mb-2 mr-2"><i class="fa fa-search"></i> Ver</a>
+            <a href="{% url 'details_produto' prod.id %}" class="btn btn-primary mb-2 mr-2"><i class="fa fa-search"></i> Ver</a>
             <a href="{% url 'edit_produto' prod.id %}" class="btn bg-secondary mb-2 mr-2"><i class="fa fa-edit"></i> Editar</a>
             <a href="{% url 'produto' prod.id %}" class="btn btn-warning mb-2"><i class="fa fa-sign-in"></i> Apagar</a>
         </div>
@@ -21,4 +21,4 @@
         {% endblock %}
         {% block scripts %}
             <script src="{% static 'js/home.js' %}"></script>
-        {% endblock %}
+{% endblock %}
