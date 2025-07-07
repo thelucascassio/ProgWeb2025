@@ -21,3 +21,7 @@ center;background-color: #ccc;}
 #383871;}
 .social-container a#google:hover, .social-container a#google:active{background-color:
 #9e3e2c;}
+/* .row{
+    display: flex;
+    max-width: 1920px
+} */

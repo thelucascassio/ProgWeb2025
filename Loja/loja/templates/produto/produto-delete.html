@@ -39,6 +39,16 @@
                 <input value="{{produto.msgPromocao}}" name="msgPromocao" disabled>
             </div>
             <div class="row">
+                <!-- <input type="hidden" value="{{produto.id}}" name="id"> -->
+                <label for="Categoria" class="col-md-2">Categoria</label>
+                <input value="{{produto.categoria}}" name="Categoria" disabled>
+            </div>
+            <div class="row">
+                <!-- <input type="hidden" value="{{produto.id}}" name="id"> -->
+                <label for="Fabricante" class="col-md-2">Fabricante</label>
+                <input value="{{produto.fabricante}}" name="Fabricante" disabled>
+            </div>
+            <div class="row">
                 <button type="submit" class="btn btn-danger col-md-2 mt-3 mr-2"><i class="fa fa-check"></i>Excluir</button>
                 <a href="{% url 'produto' %}" class="btn bg-secondary col-md-2 mt-3"><i class="fa fa-rotate-left"></i> Retornar</a>
             </div>
