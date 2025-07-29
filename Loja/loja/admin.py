@@ -5,9 +5,9 @@ class FabricanteAdmin(admin.ModelAdmin):
 
 class ProdutoAdmin(admin.ModelAdmin):
     date_hierarchy = 'criado_em'
-    list_display = ('Produto', 'destaque', 'promocao', 'msgPromocao','preco', 'categoria',) #o display só coloca os nomes na criação/edição, enquanto que o fields mostra os campos que são apresentados na tela de edição
+    list_display = ('Produto', 'destaque', 'promocao', 'msgPromocao','preco', 'categoria', 'fabricante', 'image') #o display só coloca os nomes na criação/edição, enquanto que o fields mostra os campos que são apresentados na tela de edição
     empty_value_display = 'Vazio'
-    fields = ('Produto', 'destaque', 'promocao', 'preco', 'categoria',)
+    fields = ('Produto', 'destaque', 'promocao', 'preco', 'categoria', 'fabricante', 'image')
     exclude = ('msgPromocao',)
     search_fields = ('Produto',)
 

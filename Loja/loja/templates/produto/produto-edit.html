@@ -7,7 +7,7 @@
 {% block content %}
 <div id="content">
     <div class="container">
-        <form method="POST" action= "/produto/edit" >
+        <form method="POST" action= "/produto/edit" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="row">
                 <input type="hidden" value="{{produto.id}}" name="id">
@@ -64,6 +64,16 @@
                             {% endif %}
                         {% endfor %}
                 </select>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <label for="image">Imagem</label>
+                    {% if produto.image %}
+                    <img src="{{ produto.image.url }}" alt="Imagem do produto">
+                    {% endif %}
+                    <p style="max-width: 100%; margin-bottom: 8px;"><strong>Para adicionar/alterar a imagem,</strong> escolha um arquivo:</p>
+                    <input type="file" name="image">
+                </div>
             </div>
             <div class="row">
                 <button type="submit" class="btn btn-danger col-md-2 mt-3 mr-2"><i class="fa fa-check"></i> Salvar</button>

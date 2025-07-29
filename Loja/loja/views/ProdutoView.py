@@ -69,6 +69,7 @@ def edit_produto_postback(request, id=None):
         msgPromocao = request.POST.get("msgPromocao")
         categoria = request.POST.get("CategoriaFk")
         fabricante = request.POST.get("FabricanteFk")
+        imagem_file = request.FILES.get('image')
         print("postback")
         print(id)
         print(produto)
@@ -84,6 +85,8 @@ def edit_produto_postback(request, id=None):
             obj_produto.categoria = Categoria.objects.filter(id=categoria).first()
             if msgPromocao is not None:
                 obj_produto.msgPromocao = msgPromocao
+            if imagem_file:
+                obj_produto.image = imagem_file
             obj_produto.save()
             print("Produto %s salvo com sucesso" % produto)
         except Exception as e:
