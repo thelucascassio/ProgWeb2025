@@ -19,12 +19,18 @@
                         <a class="col-md-2"> {{ item.quantidade }}</a>
                         <a class="col-md-2">R$ {{ item.preco|floatformat:2 }}</a>
                         <a class="col-md-2">R$ {{ item.total }}</a>
+                        <a class="col-md-2">
+                            <form method="POST" action="{% url 'remover_carrinhoitem' item.id %}" style="display:inline;"> 
+                                {% csrf_token %} 
+                                <button type="submit" class="btn btn-danger">Excluir</button>
+                            </form>
+                        </a>
                     </div>
                 {% endfor %}
                 <h5 class="mt-4">Total: R$ {{ carrinho.total|floatformat:2 }}</h3>
                 <div class="mt-4">
                     <a href="{% url 'home' %}" class="btn btn-secondary">Voltar à loja</a>
-                    <a href="{% url 'home' %}" class="btn btn-success">Finalizar Compra</a>
+                    <a href="{% url 'confirmar_carrinho' %}" class="btn btn-success">Finalizar Compra</a>
                 </div>
                 {% else %}
                 <div class="alert alert-warning mt-4" role="alert">Seu carrinho está vazio.</div>
