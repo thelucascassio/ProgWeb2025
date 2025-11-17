@@ -22,8 +22,7 @@ def login_view(request):
                     return redirect("/")
             else:
                 message = {'type': 'danger', 'text': 'Dados de usuário incorretos'}
-                context = {'form': loginForm, 'message': message,'title': 'Login', 'button_text':
-                'Entrar', 'link_text': 'Registrar', 'link_href': '/register'}
+    context = {'form': loginForm, 'message': message,'title': 'Login', 'button_text': 'Entrar', 'link_text': 'Registrar', 'link_href': '/register'}
     return render(request, template_name='auth/auth.html', context=context, status=200)
 def register_view(request):
     registerForm = RegisterForm()
